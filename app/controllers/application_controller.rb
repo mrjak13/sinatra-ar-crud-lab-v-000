@@ -37,12 +37,12 @@ class ApplicationController < Sinatra::Base
   end
 
   patch '/posts/:id/edit' do
-    # binding.pry
+
     # raise params.inspect
     post = Post.find(params[:id])
-    # post.name =
+    post.update(name: params[:name], content: params[:content])
 
-    # binding.pry
+
   end
 
   delete '/posts/:id/delete' do
