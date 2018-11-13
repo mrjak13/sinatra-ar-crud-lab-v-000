@@ -1,6 +1,11 @@
-<form method="post" action="patch '/posts/:id'">
+<h1>Edit: <%="#{@post.name}"%></h1>
+<form method="post" action="/posts/<%=#@post.id%>">
   <input id="hidden" type="hidden" name="_method" value="patch">
+  <label for="name">Name: </label>
   <input type="text" name="name" id="name">
+  <label for="content">Content: </label>
   <input type="text" name="content" id="content">
 
-</form> 
+  <input type="submit" value="submit">
+
+</form>

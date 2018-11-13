@@ -31,15 +31,21 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
-  get 'posts/:id/edit' do
+  get '/posts/:id/edit' do
+    @post = Post.find(params[:id])
     erb :edit
   end
 
-  patch 'posts/:id' do
+  patch '/posts/:id/edit' do
+    # binding.pry
+    # raise params.inspect
+    post = Post.find(params[:id])
+    # post.name =
 
+    # binding.pry
   end
 
-  delete 'posts/:id/delete' do
+  delete '/posts/:id/delete' do
     erb :delete
   end
 
