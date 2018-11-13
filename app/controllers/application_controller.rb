@@ -37,11 +37,10 @@ class ApplicationController < Sinatra::Base
   end
 
   patch '/posts/:id/edit' do
-
-    # raise params.inspect
     post = Post.find(params[:id])
     post.update(name: params[:name], content: params[:content])
 
+    redirect to("/posts/#{params[:id]}")
 
   end
 
